@@ -11,7 +11,9 @@ const port= process.env.PORT ||8000 ;
 
 const users=[{}];
 
-app.use(cors());
+app.use(cors({
+  origin: ["http://localhost:8081", "http://localhost:19000", "http://localhost:19001"],
+}));
 app.get("/",(req,res)=>{
     res.send("HELL ITS WORKING");
 })
